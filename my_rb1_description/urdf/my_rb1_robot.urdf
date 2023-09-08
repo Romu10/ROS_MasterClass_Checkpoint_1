@@ -192,7 +192,7 @@
 
     <!-- =========================================================================================================== -->
 
-    <!-- Joint - Front Caster wheel -->
+     <!-- Joint - Front Caster wheel -->
     <joint name="joint_front_chassis_caster_wheel" type="fixed">
         <origin rpy="0 0 0" xyz="0.1 0.0 -0.15" />
         <child link="front_caster" />
@@ -215,8 +215,9 @@
                 <sphere radius="0.025" />
             </geometry>
         </collision>
+        
         <visual>
-            <origin rpy="0 0 0" xyz="0 0 0.02" />
+            <origin rpy="0 0 0" xyz="0 0 0.01" />
             <geometry>
                 <sphere radius="0.025" />
             </geometry>
@@ -232,8 +233,9 @@
                 <sphere radius="0.010" />
             </geometry>
         </collision>
+        
         <visual>
-            <origin rpy="0 0 0" xyz="0 0 0" />
+            <origin rpy="0 0 0" xyz="0 0 -0.01" />
             <geometry>
                 <sphere radius="0.010" />
             </geometry>
@@ -269,7 +271,7 @@
             </geometry>
         </collision>
         <visual>
-            <origin rpy="0 0 0" xyz="0 0 0.00" />
+            <origin rpy="0 0 0" xyz="0 0 0.01" />
             <geometry>
                 <sphere radius="0.025" />
             </geometry>
@@ -286,7 +288,7 @@
             </geometry>
         </collision>
         <visual>
-            <origin rpy="0 0 0" xyz="0 0 0" />
+            <origin rpy="0 0 0" xyz="0 0 -0.01" />
             <geometry>
                 <sphere radius="0.010" />
             </geometry>
@@ -369,7 +371,6 @@
                 <color rgba="1 0.0 0.0 1" />
             </material>
         </visual>
-
     </link> 
 
 
