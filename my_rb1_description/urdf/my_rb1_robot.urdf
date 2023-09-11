@@ -3,16 +3,61 @@
 <robot name="robot">
     
     <!-- =========================================================================================================== -->
-
-  
-
-    <!-- =========================================================================================================== -->
-
     
 
     <!-- =========================================================================================================== -->
 
+    <!-- Gazebo Color's and Friction-->
+    <gazebo reference="base_link">
+        <material>Gazebo/Black</material>
+    </gazebo>
 
+    <gazebo reference="left_wheel">
+        <material>Gazebo/Red</material>
+        <!-- Friction -->
+        <mu1>1</mu1>
+        <mu2>1</mu2>
+    </gazebo>
+
+    <gazebo reference="right_wheel">
+        <material>Gazebo/Red</material>
+        <!-- Friction -->
+        <mu1>1</mu1>
+        <mu2>1</mu2>
+    </gazebo>
+
+    <gazebo reference="front_caster">
+        <material>Gazebo/Blue</material>
+        <!-- Friction -->
+        <mu1>0</mu1>
+        <mu2>0</mu2>
+    </gazebo>
+    
+    <gazebo reference="front_caster">
+        <preserveFixedJoint>true</preserveFixedJoint>
+    </gazebo>
+
+    <gazebo reference="back_caster">
+        <material>Gazebo/Blue</material>
+        <!-- Friction -->
+        <mu1>0</mu1>
+        <mu2>0</mu2>
+    </gazebo>
+
+    <gazebo reference="back_caster">
+        <preserveFixedJoint>true</preserveFixedJoint>
+    </gazebo>
+    
+
+    <!-- =========================================================================================================== -->
+
+    <!-- Gazebo tags - Laser scan -->
+    <gazebo reference="joint_laser_scan_chassis">
+        <preserveFixedJoint>true</preserveFixedJoint>
+    </gazebo>
+    <gazebo reference="front_laser">
+        <material>Gazebo/Red</material>
+    </gazebo>
 
     <!-- =========================================================================================================== -->
 
