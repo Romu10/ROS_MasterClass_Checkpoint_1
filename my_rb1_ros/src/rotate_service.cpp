@@ -30,7 +30,6 @@ class MoveRB1
 
         // Variables
         float current_theta = 0.0;
-        
   
         MoveRB1()
         {
@@ -103,9 +102,7 @@ class MoveRB1
             current_theta = msg->pose.pose.orientation.z;
             // ROS_INFO("Received Odometry: z = %f", current_theta);
         }
-    
 };
-
 
 int main(int argc, char** argv)
 {
