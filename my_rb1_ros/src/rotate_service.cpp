@@ -7,6 +7,7 @@
 #include <ostream>
 #include <std_msgs/Float32.h>
 #include <iostream>
+#include <cmath>
 
 class MoveRB1
 {
@@ -51,9 +52,9 @@ class MoveRB1
         {
             ROS_INFO("The Service /move_bb8_in_circle has been called");
 
-            // Obtiene el número de grados desde la solicitud
-            float degrees = req.degrees;
-            float radians = degrees * (M_PI/180);
+            int degrees = req.degrees;
+            degrees = degrees % 360;
+            float radians = (degrees * (M_PI/180));
             float initial_theta = current_theta;
 
             // Calculus
@@ -99,10 +100,15 @@ class MoveRB1
 
         void odomCallback(const nav_msgs::Odometry::ConstPtr& msg)
         {
-            current_theta = msg->pose.pose.orientation.z;
-            // ROS_INFO("Received Odometry: z = %f", current_theta);
+            // Extracting the yaw (orientation) from the Odometry message
+            current_theta = atan2(2.0 * (msg->pose.pose.orientation.w * msg->pose.pose.orientation.z +
+                                              msg->pose.pose.orientation.x * msg->pose.pose.orientation.y),
+                                     1.0 - 2.0 * (msg->pose.pose.orientation.y * msg->pose.pose.orientation.y +
+                                                  msg->pose.pose.orientation.z * msg->pose.pose.orientation.z));
         }
+
 };
+
 
 int main(int argc, char** argv)
 {
